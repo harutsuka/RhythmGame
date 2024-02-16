@@ -8,6 +8,6 @@ public class NotesManager : MonoBehaviour
     public GameObject notes;
     
     public void CreateNotes(){
-        Instantiate(notes,new Vector3(0.5f,0.12f,7.61f),Quaternion.identity);
+        Instantiate(notes,new Vector3(0.5f,0.12f,11f),Quaternion.identity);
     }
 }
