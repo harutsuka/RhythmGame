@@ -4,15 +4,17 @@ using UnityEngine;
 
 public class Notes : MonoBehaviour
 {
-    public float NoteSpeed = 5f;
+    public float noteSpeed = 5f;
+    public int score;
     void Update()
     {
-        transform.Translate(0,0, -Time.deltaTime * NoteSpeed);
+        transform.Translate(0,0, -Time.deltaTime * noteSpeed);
 
-        if(Input.GetKeyDown(KeyCode.J) && transform.position.z == 0){
+        float position = transform.position.z;
+        if(Input.GetKeyDown(KeyCode.J) && Mathf.RoundToInt(position) == 0){
             Destroy(gameObject);
-            Debug.Log(88);
         }
+
         if(transform.position.z < -1.5f){
             Destroy(gameObject);
         }
