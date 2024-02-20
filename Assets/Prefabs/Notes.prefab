@@ -110,4 +110,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2c08fb2e268544e89676a0070dd78f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NoteSpeed: 5
+  noteSpeed: 5
+  score: 0
+  accuracyText: {fileID: 0}
+  perfectTiming: 0.1
+  greatTiming: 0.2
+  goodTiming: 0.3
+  badTiming: 0.5
