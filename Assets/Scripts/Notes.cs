@@ -19,31 +19,32 @@ public class Notes : MonoBehaviour
 
     void Update()
     {
-        transform.Translate(0,0, -Time.deltaTime * noteSpeed);
+        transform.Translate(0,0, -Time.deltaTime * noteSpeed); //ノーツの動き
 
         float position = transform.position.z;
-        if(Input.GetKeyDown(KeyCode.J) && Mathf.RoundToInt(position) == 0){
-            float playerPosition = 0f;
-            float timingDifference = Mathf.Abs(position - playerPosition);
-            
-            if (timingDifference <= perfectTiming)
-            {
-                //Instantiate(perfectText,accuracyPosition,rotate);
-            }
-            else if (timingDifference <= greatTiming)
-            {
-                Debug.Log("Great");
-            }
-            else if (timingDifference <= goodTiming)
-            {
-                Debug.Log("Good");
-            }
-            else if (timingDifference <= badTiming)
-            {
-                Debug.Log("Bad");
-            }
-            else Debug.Log("Miss");
-            Destroy(gameObject);
+        if(Input.GetKeyDown(KeyCode.D) && Mathf.RoundToInt(position) == 0){
+            CheckTiming(position);
         }
+        if(Input.GetKeyDown(KeyCode.F) && Mathf.RoundToInt(position) == 0){
+            CheckTiming(position);
+        }
+        if(Input.GetKeyDown(KeyCode.J) && Mathf.RoundToInt(position) == 0){
+            CheckTiming(position);
+        }
+        if(Input.GetKeyDown(KeyCode.J) && Mathf.RoundToInt(position) == 0){
+            CheckTiming(position);
+        }
+    }
+    void CheckTiming(float position){
+        float playerPosition = 0f;
+        float timingDifference = Mathf.Abs(position - playerPosition);
+
+        if(timingDifference <= perfectTiming) Debug.Log("Perfect");
+        else if(timingDifference <= greatTiming) Debug.Log("Great");
+        else if(timingDifference <= goodTiming) Debug.Log("Good");
+        else if(timingDifference <= badTiming) Debug.Log("Bad");
+        else Debug.Log("Miss!");
+
+        Destroy(gameObject);
     }
 }

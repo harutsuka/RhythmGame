@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NotesManager : MonoBehaviour
+public class NotesGenerator : MonoBehaviour
 {
     public GameObject notes;
     [SerializeField] int LaneNumber;
