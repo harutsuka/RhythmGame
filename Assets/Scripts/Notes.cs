@@ -11,6 +11,10 @@ public class Notes : MonoBehaviour
     void Update()
     {
         transform.Translate(0,0, -Time.deltaTime * noteSpeed);
+
+        if(gameObject.transform.position.z < -1.5f){
+            Destroy(gameObject);
+        }
     }
     
 }

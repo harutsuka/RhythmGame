@@ -34,11 +34,11 @@ public class AccuracyManager : MonoBehaviour
         float playerPosition = 0f;
         float timingDifference = Mathf.Abs(position - playerPosition);
 
-        if(timingDifference <= perfectTiming) Debug.Log("perfect");
+        /*if(timingDifference <= perfectTiming) Debug.Log("perfect");
         else if(timingDifference <= greatTiming) Debug.Log("Great");
         else if(timingDifference <= goodTiming) Debug.Log("Good");
         else if(timingDifference <= badTiming) Debug.Log("Bad");
-        else Debug.Log("Miss!");
+        else Debug.Log("Miss!");*/
 
         //ひとつひとつテキスト作らんでも判定によってテキストの内容変えたらよくね？？？？？
         

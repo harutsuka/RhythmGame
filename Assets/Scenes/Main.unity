@@ -759,8 +759,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   judgeLine: {fileID: 1526660234}
   note: {fileID: 6935796344301578720, guid: 626adb4eae31e484aa4663c7a801ab68, type: 3}
-  accuracyPosition: {x: 0, y: -0.4, z: 0.8}
-  rotate: {x: 0.6156556, y: -0.0034383347, z: 0.0026863215, w: 0.78800327}
   accuracyText: {fileID: 2067424436}
   perfectTiming: 0.1
   greatTiming: 0.2
@@ -1000,6 +998,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1491013405}
   - component: {fileID: 1491013404}
+  - component: {fileID: 1491013406}
   m_Layer: 0
   m_Name: Timeline
   m_TagString: Untagged
@@ -1017,7 +1016,7 @@ PlayableDirector:
   m_Enabled: 1
   serializedVersion: 3
   m_PlayableAsset: {fileID: 11400000, guid: 7e3b653e623574c87b245b025bd1a3a3, type: 2}
-  m_InitialState: 1
+  m_InitialState: 0
   m_WrapMode: 2
   m_DirectorUpdateMode: 1
   m_InitialTime: 0
@@ -1032,6 +1031,8 @@ PlayableDirector:
     value: {fileID: 1086820744}
   - key: {fileID: 6202502072744514949, guid: 7e3b653e623574c87b245b025bd1a3a3, type: 2}
     value: {fileID: 0}
+  - key: {fileID: 8857067147627525031, guid: 7e3b653e623574c87b245b025bd1a3a3, type: 2}
+    value: {fileID: 2000907482}
   m_ExposedReferences:
     m_References:
     - a267ef69002a44d8395ac73ae806a31b: {fileID: 0}
@@ -1051,6 +1052,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1491013406
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1491013403}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62bf7db515a77429587f65b3db7ea110, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  director: {fileID: 1491013404}
 --- !u!1 &1526660234
 GameObject:
   m_ObjectHideFlags: 0

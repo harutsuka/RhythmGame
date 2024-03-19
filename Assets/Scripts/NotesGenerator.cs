@@ -15,7 +15,7 @@ public class NotesGenerator : MonoBehaviour
             Instantiate(notes,new Vector3(-0.5f,0.06f,11f),Quaternion.identity);
         }else if(LaneNumber == 2){
             Instantiate(notes,new Vector3(0.5f,0.06f,11f),Quaternion.identity);
-        }else{
+        }else if(LaneNumber == 3){
             Instantiate(notes,new Vector3(1.5f,0.06f,11f),Quaternion.identity);
         }
     }
