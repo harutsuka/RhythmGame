@@ -1,0 +1,142 @@
+{
+  "header": {
+    "PPQ": 480,
+    "timeSignature": [
+      4,
+      4
+    ],
+    "bpm": 120,
+    "name": ""
+  },
+  "tempo": [
+    {
+      "absoluteTime": 0,
+      "seconds": 0,
+      "bpm": 120
+    }
+  ],
+  "timeSignature": [
+    {
+      "absoluteTime": 0,
+      "seconds": 0,
+      "numerator": 4,
+      "denominator": 2,
+      "click": 24,
+      "notesQ": 8
+    }
+  ],
+  "startTime": 27.25,
+  "duration": 32.5,
+  "tracks": [
+    {
+      "startTime": 27.25,
+      "duration": 32.5,
+      "length": 14,
+      "notes": [
+        {
+          "name": "E4",
+          "midi": 64,
+          "time": 27.25,
+          "velocity": 0.6299212598425197,
+          "duration": 0.375
+        },
+        {
+          "name": "E4",
+          "midi": 64,
+          "time": 27.625,
+          "velocity": 0.6299212598425197,
+          "duration": 0.375
+        },
+        {
+          "name": "E4",
+          "midi": 64,
+          "time": 28,
+          "velocity": 0.6299212598425197,
+          "duration": 0.375
+        },
+        {
+          "name": "E4",
+          "midi": 64,
+          "time": 28.375,
+          "velocity": 0.6299212598425197,
+          "duration": 0.375
+        },
+        {
+          "name": "E4",
+          "midi": 64,
+          "time": 28.75,
+          "velocity": 0.6299212598425197,
+          "duration": 0.375
+        },
+        {
+          "name": "E4",
+          "midi": 64,
+          "time": 29.125,
+          "velocity": 0.6299212598425197,
+          "duration": 0.375
+        },
+        {
+          "name": "E4",
+          "midi": 64,
+          "time": 29.5,
+          "velocity": 0.6299212598425197,
+          "duration": 0.375
+        },
+        {
+          "name": "D4",
+          "midi": 62,
+          "time": 29.875,
+          "velocity": 0.6299212598425197,
+          "duration": 0.375
+        },
+        {
+          "name": "D4",
+          "midi": 62,
+          "time": 30.25,
+          "velocity": 0.6299212598425197,
+          "duration": 0.375
+        },
+        {
+          "name": "D4",
+          "midi": 62,
+          "time": 30.625,
+          "velocity": 0.6299212598425197,
+          "duration": 0.375
+        },
+        {
+          "name": "D4",
+          "midi": 62,
+          "time": 31,
+          "velocity": 0.6299212598425197,
+          "duration": 0.375
+        },
+        {
+          "name": "D4",
+          "midi": 62,
+          "time": 31.375,
+          "velocity": 0.6299212598425197,
+          "duration": 0.375
+        },
+        {
+          "name": "D4",
+          "midi": 62,
+          "time": 31.75,
+          "velocity": 0.6299212598425197,
+          "duration": 0.375
+        },
+        {
+          "name": "D4",
+          "midi": 62,
+          "time": 32.125,
+          "velocity": 0.6299212598425197,
+          "duration": 0.375
+        }
+      ],
+      "controlChanges": {},
+      "id": 0,
+      "name": "Classic Electric Piano",
+      "channelNumber": 0,
+      "isPercussion": false
+    }
+  ]
+}
