@@ -11,9 +11,10 @@ public class JsonLoader : MonoBehaviour
         string jsonText = textAsset.ToString();
         JsonNode json = JsonNode.Parse(jsonText);
         
-        /*foreach(JsonNode note in json["tracks"]){
-            foreach()
-        }*/
+        foreach(JsonNode note in json["notes"]){
+            string name = note["name"].Get<string>();
+            float time = note["time"].Get<float>();
+        }
     }
 
     // Update is called once per frame
