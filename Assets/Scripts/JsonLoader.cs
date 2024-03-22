@@ -1,17 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class JsonLoader : MonoBehaviour
 {
+    public float delayTime = 2.5f;
     public TextAsset textAsset;
     public GameObject notes;
 
      public Material material;
+     public AudioSource audioSource;
     // Start is called before the first frame update
     void Start()
     {
        LoadChart();
+       GameStart();
     }
 
     // Update is called once per frame
@@ -109,6 +113,8 @@ public class JsonLoader : MonoBehaviour
     }
 
     void GameStart(){
-        
+        DOVirtual.DelayedCall(delayTime,() => {
+            audioSource.Play();
+        });
     }
 }
