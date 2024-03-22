@@ -18,7 +18,6 @@ public class Notes : MonoBehaviour
 
         if(gameObject.transform.position.z < -1.5f){
             Destroy(gameObject);
-            Debug.Log(88);
         }
     }
     
