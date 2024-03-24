@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class Lights : MonoBehaviour
 {
@@ -72,7 +73,9 @@ public class Lights : MonoBehaviour
     void PlaySE(){
         bool isSeOn = SEManager.isSeOn;
         if(isSeOn){
-            audioSource.PlayOneShot(laneSE);
+            DOVirtual.DelayedCall(-2f,() =>{
+                audioSource.PlayOneShot(laneSE);
+            });
         }
     }
 }

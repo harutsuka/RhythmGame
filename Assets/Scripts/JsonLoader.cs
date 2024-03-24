@@ -93,7 +93,7 @@ public class JsonLoader : MonoBehaviour
     }
 
     void GenerateC4Mesh(){
-        
+
     }
     void GenerateMesh(string name){
         MeshFilter mf = GetComponent<MeshFilter>();
@@ -118,7 +118,7 @@ public class JsonLoader : MonoBehaviour
 
     void GameStart(){
         DOVirtual.DelayedCall(delayTime,() => {
-            //audioSource.Play();
+            audioSource.Play();
         });
     }
 }
