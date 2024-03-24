@@ -9,6 +9,11 @@ public class Lights : MonoBehaviour
     private Renderer rend;
     private float alpha = 0;
 
+    public SEManager SEManager;
+    public AudioSource audioSource;
+    public AudioClip laneSE;
+
+
     void Start()
     {
         rend = GetComponent<Renderer>();
@@ -26,36 +31,48 @@ public class Lights : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.D))
             {
-                colorChange();
+                ColorChange();
+                PlaySE();
+
             }
         }
         if (num == 2)
         {
             if (Input.GetKeyDown(KeyCode.F))
             {
-                colorChange();
+                ColorChange();
+                PlaySE();
             }
         }
         if (num == 3)
         {
             if (Input.GetKeyDown(KeyCode.J))
             {
-                colorChange();
+                ColorChange();
+                PlaySE();
             }
         }
         if (num == 4)
         {
             if (Input.GetKeyDown(KeyCode.K))
             {
-                colorChange();
+                ColorChange();
+                PlaySE();
             }
         }
         alpha -= Speed * Time.deltaTime;
     }
 
-    void colorChange()
+    void ColorChange()
     {
         alpha = 0.3f;
         rend.material.color = new Color(rend.material.color.r, rend.material.color.g, rend.material.color.b, alpha);
+    }
+
+    void PlaySE(){
+        bool isSeOn = SEManager.isSeOn;
+        if(isSeOn){
+            audioSource.PlayOneShot(laneSE);
+        }
     }
 }

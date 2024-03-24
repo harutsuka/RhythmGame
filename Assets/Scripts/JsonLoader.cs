@@ -48,6 +48,7 @@ public class JsonLoader : MonoBehaviour
             if(duration > 0.315){
                 float endTime = time + duration;
                 if(name == "C4"){
+                    Invoke("GenerateC4Mesh",time);
                     Invoke("GenerateC4Note",endTime);
                 }else if (name == "D4") {
                     Invoke("GenerateD4Note", endTime);
@@ -57,7 +58,7 @@ public class JsonLoader : MonoBehaviour
                 {
                     Invoke("GenerateF4Note",endTime);
                 }
-                GenerateMesh();
+                
             }
         }
         
@@ -91,7 +92,10 @@ public class JsonLoader : MonoBehaviour
         Instantiate(notes,position,Quaternion.identity);
     }
 
-    void GenerateMesh(){
+    void GenerateC4Mesh(){
+        
+    }
+    void GenerateMesh(string name){
         MeshFilter mf = GetComponent<MeshFilter>();
         MeshRenderer mr = GetComponent<MeshRenderer>();
  
@@ -114,7 +118,7 @@ public class JsonLoader : MonoBehaviour
 
     void GameStart(){
         DOVirtual.DelayedCall(delayTime,() => {
-            audioSource.Play();
+            //audioSource.Play();
         });
     }
 }
