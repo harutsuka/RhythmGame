@@ -29,6 +29,10 @@ public class AccuracyManager : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.K) && Mathf.RoundToInt(position) == 0){
             CheckTiming(position);
         }
+
+        if(position < -0.5f){
+            accuracyText.text = "Miss";
+        }
     }
     void CheckTiming(float position){
         float playerPosition = 0f;

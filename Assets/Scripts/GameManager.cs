@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 
-public class JsonLoader : MonoBehaviour
+public class GameManager : MonoBehaviour
 {
     public float delayTime = 2.5f;
     public TextAsset textAsset;
@@ -11,6 +11,9 @@ public class JsonLoader : MonoBehaviour
 
      public Material material;
      public AudioSource audioSource;
+
+     public Notes notesScript;
+     
     // Start is called before the first frame update
     void Start()
     {
@@ -45,7 +48,7 @@ public class JsonLoader : MonoBehaviour
             {
                 Invoke("GenerateF4Note",time);
             }           
-            if(duration > 0.315){
+            if(duration > 0.5){
                 float endTime = time + duration;
                 if(name == "C4"){
                     Invoke("GenerateC4Mesh",time);
@@ -95,8 +98,8 @@ public class JsonLoader : MonoBehaviour
     void GenerateC4Mesh(){
 
     }
-    void GenerateMesh(string name){
-        MeshFilter mf = GetComponent<MeshFilter>();
+    void Generate(string name){
+        /*MeshFilter mf = GetComponent<MeshFilter>();
         MeshRenderer mr = GetComponent<MeshRenderer>();
  
         Vector3[] verts = new Vector3[4];
@@ -113,7 +116,13 @@ public class JsonLoader : MonoBehaviour
         mesh.RecalculateNormals();
  
         mf.sharedMesh = mesh;
-        mr.sharedMaterial = material;
+        mr.sharedMaterial = material;*/
+
+        float noteSpeed = notesScript.noteSpeed;
+        transform.Translate(new Vector3(0,0,-Time.deltaTime * noteSpeed));
+
+
+
     }
 
     void GameStart(){

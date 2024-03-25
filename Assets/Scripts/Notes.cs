@@ -7,10 +7,9 @@ using UnityEngine.UIElements;
 public class Notes : MonoBehaviour
 {
     public float noteSpeed = 5f;
-    public float noteTime;
 
     void Start(){
-        float passTime = noteTime+2.2f;
+        
     }
     void Update()
     {
