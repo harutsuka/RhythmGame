@@ -16,7 +16,7 @@ public class AccuracyManager : MonoBehaviour
       
     void Update()
     {
-        float position = transform.position.z;
+        float position = note.transform.position.z;
         if(Input.GetKeyDown(KeyCode.D) && Mathf.RoundToInt(position) == 0){
             CheckTiming(position);
         }
@@ -26,7 +26,7 @@ public class AccuracyManager : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.J) && Mathf.RoundToInt(position) == 0){
             CheckTiming(position);
         }
-        if(Input.GetKeyDown(KeyCode.J) && Mathf.RoundToInt(position) == 0){
+        if(Input.GetKeyDown(KeyCode.K) && Mathf.RoundToInt(position) == 0){
             CheckTiming(position);
         }
     }
@@ -34,15 +34,21 @@ public class AccuracyManager : MonoBehaviour
         float playerPosition = 0f;
         float timingDifference = Mathf.Abs(position - playerPosition);
 
-        /*if(timingDifference <= perfectTiming) Debug.Log("perfect");
-        else if(timingDifference <= greatTiming) Debug.Log("Great");
-        else if(timingDifference <= goodTiming) Debug.Log("Good");
-        else if(timingDifference <= badTiming) Debug.Log("Bad");
-        else Debug.Log("Miss!");*/
+        if(timingDifference <= perfectTiming){
+            accuracyText.text = "Perfect!";
+        }
+        else if(timingDifference <= greatTiming){
+            accuracyText.text = "Great!";
+        }
+        else if(timingDifference <= goodTiming){
+            accuracyText.text = "Good";
+        }
+        else if(timingDifference <= badTiming){
+            accuracyText.text = "Bad";
+        }
+        else accuracyText.text = "Miss";        
 
-        //ひとつひとつテキスト作らんでも判定によってテキストの内容変えたらよくね？？？？？
-        
-
-        Destroy(gameObject);
+        Destroy(note);
+        Debug.Log(accuracyText.text);
     }
 }
