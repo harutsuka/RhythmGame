@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -55,14 +56,14 @@ public class GameManager : MonoBehaviour
                     Invoke("GenerateC4Note",endTime);
                     
                 }else if (name == "D4") {
-                    Invoke("GenerateD4Long",endTime);
+                    Invoke("GenerateD4Long",time);
                     Invoke("GenerateD4Note", endTime);
                 }else if(name == "E4"){
-                    Invoke("GenerateE4Long",endTime);
+                    Invoke("GenerateE4Long",time);
                     Invoke("GenerateE4Note",endTime);
                 }else if(name == "F4")
                 {
-                    Invoke("GenerateF4Long",endTime);
+                    Invoke("GenerateF4Long",time);
                     Invoke("GenerateF4Note",endTime);
                 }
                 
@@ -116,7 +117,7 @@ public class GameManager : MonoBehaviour
 
         if(name == "C4"){
             position = new Vector3(-1.5f, 0.06f, 11f);
-            longNotes.transform.localScale = new Vector3();
+            //longNotes.transform.localScale = new Vector3();
         }else if(name == "D4"){
             position = new Vector3(-0.5f, 0.06f, 11f);
         }else if(name == "E4"){
@@ -132,5 +133,14 @@ public class GameManager : MonoBehaviour
         DOVirtual.DelayedCall(delayTime,() => {
             audioSource.Play();
         });
+
+        float soundTime = 0;
+        soundTime += Time.time;
+
+        if(soundTime > audioSource.clip.length){
+            SceneManager.LoadScene("Result");
+            Debug.Log(88);
+            
+        }
     }
 }

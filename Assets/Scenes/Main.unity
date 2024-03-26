@@ -888,17 +888,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 626adb4eae31e484aa4663c7a801ab68, type: 3}
---- !u!114 &897658042 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4138647185860884219, guid: 626adb4eae31e484aa4663c7a801ab68, type: 3}
-  m_PrefabInstance: {fileID: 897658041}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b2c08fb2e268544e89676a0070dd78f5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &987459939
 GameObject:
   m_ObjectHideFlags: 0
@@ -1410,9 +1399,8 @@ MonoBehaviour:
   delayTime: 2.5
   textAsset: {fileID: 4900000, guid: 4e51850e03df44a4cb4844d7a460f6e7, type: 3}
   notes: {fileID: 6935796344301578720, guid: 626adb4eae31e484aa4663c7a801ab68, type: 3}
-  material: {fileID: 2100000, guid: 6f6174767cabf4104ad8899be3af6f8f, type: 2}
   audioSource: {fileID: 1487859260}
-  notesScript: {fileID: 897658042}
+  longNotes: {fileID: 2470729365020134882, guid: 9c12443b2a34a4486890214f8fb0f5b2, type: 3}
 --- !u!4 &1487859257
 Transform:
   m_ObjectHideFlags: 0
