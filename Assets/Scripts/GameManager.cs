@@ -9,10 +9,9 @@ public class GameManager : MonoBehaviour
     public TextAsset textAsset;
     public GameObject notes;
 
-     public Material material;
      public AudioSource audioSource;
 
-     public Notes notesScript;
+     public GameObject longNotes;
      
     // Start is called before the first frame update
     void Start()
@@ -50,15 +49,20 @@ public class GameManager : MonoBehaviour
             }           
             if(duration > 0.5){
                 float endTime = time + duration;
+                float scale_factor = endTime - time;
                 if(name == "C4"){
-                    Invoke("GenerateC4Mesh",time);
+                    Invoke("GenerateC4Long",time);
                     Invoke("GenerateC4Note",endTime);
+                    
                 }else if (name == "D4") {
+                    Invoke("GenerateD4Long",endTime);
                     Invoke("GenerateD4Note", endTime);
                 }else if(name == "E4"){
+                    Invoke("GenerateE4Long",endTime);
                     Invoke("GenerateE4Note",endTime);
                 }else if(name == "F4")
                 {
+                    Invoke("GenerateF4Long",endTime);
                     Invoke("GenerateF4Note",endTime);
                 }
                 
@@ -95,33 +99,32 @@ public class GameManager : MonoBehaviour
         Instantiate(notes,position,Quaternion.identity);
     }
 
-    void GenerateC4Mesh(){
-
+    void GenerateC4Long(){
+        GenerateLongNote("C4");
     }
-    void Generate(string name){
-        /*MeshFilter mf = GetComponent<MeshFilter>();
-        MeshRenderer mr = GetComponent<MeshRenderer>();
- 
-        Vector3[] verts = new Vector3[4];
-        int[] triangles = { 0, 1, 3, 1, 2, 3 };
- 
-        verts[0] = new Vector3(-1f, 0.06f, 11);
-        verts[1] = new Vector3(0, 0.06f,11);
-        verts[2] = new Vector3(0, 0.06f, 0);
-        verts[3] = new Vector3(-1f, 0.06f, 0);
- 
-        Mesh mesh = new Mesh();
-        mesh.vertices = verts;
-        mesh.triangles = triangles;
-        mesh.RecalculateNormals();
- 
-        mf.sharedMesh = mesh;
-        mr.sharedMaterial = material;*/
+    void GenerateD4Long(){
+        GenerateLongNote("D4");
+    }
+    void GenerateE4Long(){
+        GenerateLongNote("E4");
+    }
+    void GenerateF4Long(){
+        GenerateLongNote("F4");
+    }
+    void GenerateLongNote(string name){
+        Vector3 position = Vector3.zero; 
 
-        float noteSpeed = notesScript.noteSpeed;
-        transform.Translate(new Vector3(0,0,-Time.deltaTime * noteSpeed));
-
-
+        if(name == "C4"){
+            position = new Vector3(-1.5f, 0.06f, 11f);
+            longNotes.transform.localScale = new Vector3();
+        }else if(name == "D4"){
+            position = new Vector3(-0.5f, 0.06f, 11f);
+        }else if(name == "E4"){
+            position = new Vector3(0.5f,0.06f,11f);
+        }else if(name == "F4"){
+            position = new Vector3(1.5f,0.06f,11f);
+        }
+        Instantiate(longNotes,position,Quaternion.identity);
 
     }
 
