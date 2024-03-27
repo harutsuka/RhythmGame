@@ -227,37 +227,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &461394425
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 461394426}
-  m_Layer: 0
-  m_Name: GameObject
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &461394426
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 461394425}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.49999997}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &632098403
 GameObject:
   m_ObjectHideFlags: 0
@@ -293,7 +262,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 200, y: -100}
+  m_AnchoredPosition: {x: 149, y: -83}
   m_SizeDelta: {x: 300, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &632098405
@@ -318,7 +287,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 40
+    m_FontSize: 30
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 3
@@ -329,7 +298,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Score
+  m_Text: 'Score
+
+'
 --- !u!222 &632098406
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -637,8 +608,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 200, y: -70}
-  m_SizeDelta: {x: 250, y: 50}
+  m_AnchoredPosition: {x: 148.72986, y: -49}
+  m_SizeDelta: {x: 197.46, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &726140564
 MonoBehaviour:
@@ -725,7 +696,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -100}
+  m_AnchoredPosition: {x: 0, y: -70.2}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &848517251
@@ -896,8 +867,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -13.136, y: 0}
-  m_SizeDelta: {x: 46.272, y: 0}
+  m_AnchoredPosition: {x: 0, y: 1.25}
+  m_SizeDelta: {x: 45, y: -2.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &987459941
 MonoBehaviour:
@@ -985,7 +956,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -1085,13 +1056,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22390e594da854fdc8a6dfc4491f4fac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AccuracyText: {fileID: 848517251}
+  NotesList:
+  - {fileID: 6935796344301578720, guid: 626adb4eae31e484aa4663c7a801ab68, type: 3}
   judgeLine: {fileID: 1526660234}
-  note: {fileID: 6935796344301578720, guid: 626adb4eae31e484aa4663c7a801ab68, type: 3}
-  accuracyText: {fileID: 848517251}
-  perfectTiming: 0.1
-  greatTiming: 0.2
-  goodTiming: 0.3
-  badTiming: 0.5
+  perfectTime: 0.5
+  greatTime: 1
+  goodTime: 1.5
+  badTime: 2
 --- !u!1 &1285907506
 GameObject:
   m_ObjectHideFlags: 0
@@ -1375,6 +1347,8 @@ MonoBehaviour:
   notes: {fileID: 6935796344301578720, guid: 626adb4eae31e484aa4663c7a801ab68, type: 3}
   audioSource: {fileID: 1487859260}
   longNotes: {fileID: 2470729365020134882, guid: 9c12443b2a34a4486890214f8fb0f5b2, type: 3}
+  accuracyManager:
+  - {fileID: 1275546232}
 --- !u!4 &1487859257
 Transform:
   m_ObjectHideFlags: 0
@@ -2290,4 +2264,3 @@ SceneRoots:
   - {fileID: 1487859257}
   - {fileID: 666394008}
   - {fileID: 1125314143}
-  - {fileID: 461394426}

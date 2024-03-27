@@ -13,15 +13,18 @@ public class GameManager : MonoBehaviour
      public AudioSource audioSource;
 
      public GameObject longNotes;
+
+     public AccuracyManager[] accuracyManager;
      
     // Start is called before the first frame update
     void Start()
     {
        LoadChart();
        GameStart();
+
+       Application.targetFrameRate = 30;
     }
 
-    // Update is called once per frame
     void Update()
     {
         
@@ -37,6 +40,8 @@ public class GameManager : MonoBehaviour
             float time = float.Parse(timeText);
             string durationText = note["duration"].Get<string>();
             float duration = float.Parse(durationText);
+
+
             
             if(name == "C4"){
                 Invoke("GenerateC4Note",time);
@@ -98,6 +103,8 @@ public class GameManager : MonoBehaviour
             position = new Vector3(1.5f,0.06f,11f);
         }
         Instantiate(notes,position,Quaternion.identity);
+
+        accuracyManager[0].NotesList.Add(notes);
     }
 
     void GenerateC4Long(){
@@ -139,7 +146,6 @@ public class GameManager : MonoBehaviour
 
         if(soundTime > audioSource.clip.length){
             SceneManager.LoadScene("Result");
-            Debug.Log(88);
             
         }
     }
