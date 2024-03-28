@@ -93,18 +93,28 @@ public class GameManager : MonoBehaviour
     void GenerateNote(string name){
         Vector3 position = Vector3.zero; 
 
+        var note = Instantiate(notes,position,Quaternion.identity);
+
         if(name == "C4"){
             position = new Vector3(-1.5f, 0.06f, 11f);
+            note.transform.position = position;
+            accuracyManager[0].NotesList.Add(note);
         }else if(name == "D4"){
             position = new Vector3(-0.5f, 0.06f, 11f);
+            note.transform.position = position;
+            accuracyManager[1].NotesList.Add(note);
         }else if(name == "E4"){
             position = new Vector3(0.5f,0.06f,11f);
+            note.transform.position = position;
+            accuracyManager[2].NotesList.Add(note);
         }else if(name == "F4"){
             position = new Vector3(1.5f,0.06f,11f);
+            note.transform.position = position;
+            accuracyManager[3].NotesList.Add(note);
         }
-        Instantiate(notes,position,Quaternion.identity);
 
-        accuracyManager[0].NotesList.Add(notes);
+        
+        
     }
 
     void GenerateC4Long(){
