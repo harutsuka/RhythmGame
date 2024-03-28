@@ -7,6 +7,7 @@ using UnityEngine.UIElements;
 public class Notes : MonoBehaviour
 {
     public float noteSpeed = 5f;
+    public int combo = 0;
 
     void Start(){
         
@@ -19,5 +20,4 @@ public class Notes : MonoBehaviour
             Destroy(gameObject);
         }
     }
-    
 }

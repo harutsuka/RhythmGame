@@ -20,6 +20,8 @@ public class GameManager : MonoBehaviour
 
     public Text scoreText;
     public int score;
+    public int combo;
+    public Text comboText;
 
     void Start()
     {
@@ -34,8 +36,14 @@ public class GameManager : MonoBehaviour
         score = 0;
         for(var i =0;i<3;i++){
             score += AccuracyManager[i].score;
+            combo += AccuracyManager[i].combo;
+
+            if(combo < 1){
+                comboText.text = "";
+            }
         }
         scoreText.text = score.ToString();
+        comboText.text = combo.ToString();
     }
 
     void LoadChart(){
