@@ -8,6 +8,7 @@ using DG.Tweening;
 
 public class AccuracyManager : MonoBehaviour
 {
+    public int score = 0;
     public Text AccuracyText;
     public List<GameObject> NotesList  = new List<GameObject>();
     
@@ -30,41 +31,44 @@ public class AccuracyManager : MonoBehaviour
         if(Input.GetKey(keyName)){
             CheckTiming();
         }
+
+        
     }
 
     void RemoveNote(){
         if(NotesList.Count > 0){
             NotesList.Remove(NotesList[0]);
-
-            Debug.Log(888);
         }
     }
 
     void CheckTiming(){
         GameObject currentNote = NotesList[0];
         float distance = Mathf.Abs(currentNote.transform.position.z - transform.position.z);
-
+        if(distance < 2){
         if(distance > badTime){
-          AccuracyText.text = "Miss!"; 
-          Debug.Log("miss");
+          AccuracyText.text = "MISS!"; 
         }
 
         if(distance < perfectTime){
-            Debug.Log("perfext");
-            AccuracyText.text = "Perfect!";
+            AccuracyText.text = "PERFECT!";
+            Debug.Log("per");
+            score += 100;
         }else if(distance < greatTime){
-            Debug.Log("great");
-            AccuracyText.text = "Great!";
+            AccuracyText.text = "GREAT!";
+            Debug.Log("gre");
+            score += 80;
         }else if(distance < goodTime){
-            AccuracyText.text = "Good!";
-            Debug.Log("good");
+            AccuracyText.text = "GOOD!";
+            Debug.Log("go");
+            score += 50;
         }else if(distance < badTime){
-            AccuracyText.text = "Bad";
+            AccuracyText.text = "BAD";
             Debug.Log("bad");
+            score += 30;
         }
         
         RemoveNote();
-        
+        }
     }
    
 }

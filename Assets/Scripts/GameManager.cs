@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -10,13 +11,16 @@ public class GameManager : MonoBehaviour
     public TextAsset textAsset;
     public GameObject notes;
 
-     public AudioSource audioSource;
+    public AudioSource audioSource;
 
-     public GameObject longNotes;
+    public GameObject longNotes;
 
-     public AccuracyManager[] accuracyManager;
-     
-    // Start is called before the first frame update
+    public AccuracyManager[] AccuracyManager;
+
+
+    public Text scoreText;
+    public int score;
+
     void Start()
     {
        LoadChart();
@@ -27,7 +31,11 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        
+        score = 0;
+        for(var i =0;i<3;i++){
+            score += AccuracyManager[i].score;
+        }
+        scoreText.text = score.ToString();
     }
 
     void LoadChart(){
@@ -98,19 +106,19 @@ public class GameManager : MonoBehaviour
         if(name == "C4"){
             position = new Vector3(-1.5f, 0.06f, 11f);
             note.transform.position = position;
-            accuracyManager[0].NotesList.Add(note);
+            AccuracyManager[0].NotesList.Add(note);
         }else if(name == "D4"){
             position = new Vector3(-0.5f, 0.06f, 11f);
             note.transform.position = position;
-            accuracyManager[1].NotesList.Add(note);
+            AccuracyManager[1].NotesList.Add(note);
         }else if(name == "E4"){
             position = new Vector3(0.5f,0.06f,11f);
             note.transform.position = position;
-            accuracyManager[2].NotesList.Add(note);
+            AccuracyManager[2].NotesList.Add(note);
         }else if(name == "F4"){
             position = new Vector3(1.5f,0.06f,11f);
             note.transform.position = position;
-            accuracyManager[3].NotesList.Add(note);
+            AccuracyManager[3].NotesList.Add(note);
         }
 
         

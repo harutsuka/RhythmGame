@@ -303,6 +303,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22390e594da854fdc8a6dfc4491f4fac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  score: 0
   AccuracyText: {fileID: 848517251}
   NotesList: []
   keyName: 106
@@ -324,7 +325,7 @@ GameObject:
   - component: {fileID: 632098405}
   - component: {fileID: 632098407}
   m_Layer: 5
-  m_Name: Score
+  m_Name: ScoreText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -698,7 +699,7 @@ GameObject:
   - component: {fileID: 726140563}
   - component: {fileID: 726140564}
   m_Layer: 5
-  m_Name: Score
+  m_Name: ScoreSlider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -822,6 +823,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22390e594da854fdc8a6dfc4491f4fac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  score: 0
   AccuracyText: {fileID: 848517251}
   NotesList: []
   keyName: 107
@@ -880,7 +882,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1225,6 +1227,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22390e594da854fdc8a6dfc4491f4fac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  score: 0
   AccuracyText: {fileID: 848517251}
   NotesList: []
   keyName: 100
@@ -1516,11 +1519,9 @@ MonoBehaviour:
   notes: {fileID: 6935796344301578720, guid: 626adb4eae31e484aa4663c7a801ab68, type: 3}
   audioSource: {fileID: 1487859260}
   longNotes: {fileID: 2470729365020134882, guid: 9c12443b2a34a4486890214f8fb0f5b2, type: 3}
-  accuracyManager:
-  - {fileID: 1275546232}
-  - {fileID: 2142755955}
-  - {fileID: 300573295}
-  - {fileID: 750820916}
+  AccuracyManager: []
+  scoreText: {fileID: 632098405}
+  score: 0
 --- !u!4 &1487859257
 Transform:
   m_ObjectHideFlags: 0
@@ -2561,6 +2562,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22390e594da854fdc8a6dfc4491f4fac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  score: 0
   AccuracyText: {fileID: 848517251}
   NotesList: []
   keyName: 102
